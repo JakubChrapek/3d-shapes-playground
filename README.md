@@ -9,7 +9,7 @@ Live version: https://learnwithjason.surge.sh (wait a little for the assets to l
 
 # What's this?
 
-This is a demo Jason Lengstorf ([@jlengstorf](https://twitter.com/jlengstorf)) and I ([@0xca0a](https://twitter.com/0xca0a)) were building together in a [learn-with-jason episode on Twitch](https://www.twitch.tv/videos/477199412). We go into threejs a little, how to install three-fiber, what it is, how to create a simple scene, interaction, animation, game-loop fundamentals, lights, shadows, fog and how to load models.
+Experiments with react-three-fiber library after watching video from Jason Lengstorf.
 
 # Links
 
@@ -26,7 +26,6 @@ sketchfab: http://sketchfab.com
 blender: https://www.blender.org
 
 blender 2.8 intro: https://www.youtube.com/watch?v=jBqYTgaFDxU
-
 
 # Attributions
 

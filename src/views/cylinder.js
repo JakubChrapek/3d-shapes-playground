@@ -34,7 +34,7 @@ const Shape = ({ wireframe }) => {
       castShadow
     >
       <ambientLight intensity={1} />
-      <spotLight castShadow position={[15, 20, 5]} penumbra={1} castShadow />
+      <spotLight castShadow position={[15, 20, 5]} penumbra={1} />
       <cylinderGeometry attach="geometry" args={[1, 1, 2, 20]} />
       <a.meshLambertMaterial
         attach="material"

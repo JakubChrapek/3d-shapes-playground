@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import React, { Suspense, useState, useEffect, useRef } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { Canvas, useLoader } from 'react-three-fiber';
 import { useTransition, a } from 'react-spring';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
