@@ -6,6 +6,11 @@ const NavbarStyles = styled.nav`
   color: #f8f8f8;
   padding: 2rem;
   position: absolute;
+  @media (max-width: 767px) {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
 
   ul {
     list-style: none;
@@ -13,6 +18,10 @@ const NavbarStyles = styled.nav`
     justify-content: center;
     gap: 3em;
     text-transform: uppercase;
+    padding: 0;
+    @media (max-width: 767px) {
+      gap: 1em;
+    }
   }
 
   a {
@@ -24,6 +33,11 @@ const NavbarStyles = styled.nav`
     z-index: 1;
     color: #f8f8f8;
     transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    @media (max-width: 767px) {
+      padding: 8px;
+      font-size: 20px;
+      letter-spacing: 3px;
+    }
     &:after {
       content: '';
       position: absolute;
@@ -62,6 +76,11 @@ const Navbar = () => {
         <li>
           <NavLink activeClassName="active" to="/box">
             Box
+          </NavLink>
+        </li>
+        <li>
+          <NavLink activeClassName="active" to="/cylinder">
+            Cylinder
           </NavLink>
         </li>
       </ul>

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-three/flex": "^0.5.2",
     "drei": "^0.0.60",
     "gsap": "^3.6.1",
     "react": "^16.13.1",

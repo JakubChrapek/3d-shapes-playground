@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { Flex, Box } from '@react-three/flex';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { Flex, Box as FlexBox } from '@react-three/flex';
 import { Canvas, useFrame, extend } from 'react-three-fiber';
 import { useSpring, a } from 'react-spring/three';
 
 extend({ OrbitControls });
 
-const Cube = () => {
+const Shape = ({ wireframe }) => {
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);
   const meshRef = useRef();
@@ -18,7 +18,9 @@ const Cube = () => {
   });
 
   useFrame(() => {
-    meshRef.current.rotation.y += 0.005;
+    meshRef.current.rotation.x += 0.001;
+    meshRef.current.rotation.y += 0.001;
+    meshRef.current.rotation.z += 0.001;
   });
 
   return (
@@ -28,21 +30,23 @@ const Cube = () => {
       onClick={() => setActive(!active)}
       scale={props.scale}
       ref={meshRef}
-      rotation={[0.3, 0, 0]}
+      rotation={[0, 0, 0]}
+      castShadow
     >
       <ambientLight intensity={1} />
-      <octahedronGeometry attach="geometry" args={[2, 2]} />
+      <spotLight castShadow position={[15, 20, 5]} penumbra={1} castShadow />
+      <cylinderGeometry attach="geometry" args={[1, 1, 2, 20]} />
       <a.meshLambertMaterial
         attach="material"
         color={props.color}
         emissive="red"
-        wireframe={true}
+        wireframe={wireframe}
       />
     </a.mesh>
   );
 };
 
-const Box = () => {
+const Cylinder = () => {
   useEffect(() => {
     gsap.from('.line', {
       y: 120,
@@ -58,21 +62,24 @@ const Box = () => {
     <div>
       <h1>
         <div className="line-wrapper">
-          <span className="line">Sześcian</span>
+          <span className="line">Cylinder</span>
         </div>
         <div className="line-wrapper">
-          <span className="line">na wypasie</span>
+          <span className="line">na rejonie</span>
         </div>
       </h1>
       <Canvas>
         <Flex flexDirection="row" justifyContent="center" alignItems="center">
-          <FlexBox centerAnchor>
-            <Cube />
-          </FlexBox>
+          <Box centerAnchor>
+            <Shape wireframe={true} />
+          </Box>
+          <Box centerAnchor>
+            <Shape />
+          </Box>
         </Flex>
       </Canvas>
     </div>
   );
 };
 
-export default Box;
+export default Cylinder;

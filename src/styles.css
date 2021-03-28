@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
 html,
 body,
 #root,
@@ -13,7 +18,13 @@ canvas {
 }
 
 body {
-  background: #181818;
+  background: radial-gradient(
+    at 50% 100%,
+    #873740 0%,
+    #272730 40%,
+    #171720 80%,
+    #070710 100%
+  );
   font-family: 'Montserrat';
 }
 
@@ -31,18 +42,21 @@ body {
 h1 {
   position: absolute;
   top: 120px;
-  left: 50%;
+  left: calc(2rem + 20px);
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 4vw;
-  transform: translate3d(-50%, 0, 0);
   margin: 0;
   color: peru;
   letter-spacing: 0.03;
   line-height: 1.1;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   z-index: 1;
+  @media (max-width: 767px) {
+    font-size: 20px;
+    left: calc(1rem + 8px);
+  }
 }
 
 .layer {

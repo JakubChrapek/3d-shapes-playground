@@ -80,10 +80,19 @@ export default function Home() {
       <div className="bg" />
       <h1>
         <div className="line-wrapper">
-          <span className="line">Plac zabaw</span>
+          <span className="line">Learnt</span>
         </div>
         <div className="line-wrapper">
-          <span className="line">w 3D</span>
+          <span className="line">
+            from{' '}
+            <a
+              href="https://www.learnwithjason.dev/animation-and-3d-in-react-three-fiber"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Jason
+            </a>
+          </span>
         </div>
       </h1>
       <Canvas className="canvas" shadowMap camera={{ position: [0, 0, 15] }}>
